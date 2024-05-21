@@ -1,7 +1,7 @@
-async function fetchPosts(limit, page, query) {
+async function fetchPosts({ page, query }) {
   const params = new URLSearchParams({
-    _page: page?.toString(),
-    _limit: limit?.toString(),
+    _limit: '10',
+    _page: page || '1',
   });
   if (query) {
     params.append('q', query);
